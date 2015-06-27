@@ -37,14 +37,14 @@ module.exports = function(grunt) {
       }
     },    
     aws_s3: {
+      options: {
+        accessKeyId: s3.accessKeyId,
+        secretAccessKey: s3.secretAccessKey,
+        bucket: env.s3.bucket,
+        region: env.s3.region,
+        sslEnabled: false
+      },
       release: {
-        options: {
-          accessKeyId: s3.accessKeyId,          
-          secretAccessKey: s3.secretAccessKey,
-          bucket: env.s3.bucket,    
-          region: env.s3.region,        
-          sslEnabled: false
-        },
         files: [
           { 
             expand: true, 
@@ -53,12 +53,25 @@ module.exports = function(grunt) {
             src: ['**'], 
             action: 'upload', 
             differential: true 
-          },          
-          { 
-            dest: '/', 
-            cwd: '<%= releaseDirectory %>/', 
-            action: 'delete', 
-            differential: true 
+          }
+        ]
+      },
+      release_cleanup: {
+        files: [
+          {
+            dest: '/',
+            cwd: '<%= releaseDirectory %>/',
+            action: 'delete',
+            differential: true
+          }
+        ]
+      },
+      restore_songs: {
+        files: [
+          {
+            cwd: 'src/songs/',
+            dest: 'songs/',
+            action: 'download'
           }
         ]
       }
@@ -81,6 +94,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-aws-s3');  
   grunt.loadNpmTasks('grunt-sass');
   
-  grunt.registerTask('deploy', ['sass','clean:release','copy:release','htmlmin:songs','aws_s3']);
+  grunt.registerTask('deploy', ['sass','clean:release','copy:release','htmlmin:songs','aws_s3:release']);
+  grunt.registerTask('deploy_cleanup', ['aws_s3:release_cleanup']);
+  grunt.registerTask('restore_songs', ['aws_s3:restore_songs']);
   grunt.registerTask('css',['sass']);
 };
