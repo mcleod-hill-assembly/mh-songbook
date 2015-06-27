@@ -37,7 +37,11 @@ define([
             } else {
                 var el = $("a#"+songSlug);
                 if (el.length > 0){
-                    el.click();
+                    $('html, body').animate({
+                        scrollTop: el.offset().top
+                    }, SCROLL_TO_SONG_RATE, function(){
+                        el.click();
+                    });
                 }
             }
         }
