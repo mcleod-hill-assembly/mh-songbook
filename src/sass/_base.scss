@@ -1,0 +1,23 @@
+$banner_background: #211f1f;
+$banner_heading_color: #fefffe;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#banner {
+  background-color: $banner_background;
+  width: 100%;
+  h2 {
+    text-align: center;
+    color: $banner_heading_color;
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}

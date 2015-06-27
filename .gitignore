@@ -1,0 +1,6 @@
+npm-debug.log
+src/songs/*
+node_modules/*
+config/*.js
+.idea/*
+releases/*

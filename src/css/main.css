@@ -1,0 +1,423 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+#container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; }
+
+#banner {
+  background-color: #211f1f;
+  width: 100%; }
+  #banner h2 {
+    text-align: center;
+    color: #fefffe;
+    font: 400 20px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0;
+    padding: 0; }
+
+#song-index ul {
+  padding-left: 0;
+  padding-right: 0;
+  list-style-type: none; }
+  #song-index ul li {
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+    border-bottom: 1px solid #ccc; }
+    #song-index ul li a {
+      width: 90%;
+      text-decoration: none;
+      color: #000;
+      padding-right: 0;
+      font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
+      transition: font-size 0.3s ease, background-color 0.3s ease; }
+    #song-index ul li:hover {
+      background: #f6f6f6; }
+    #song-index ul li:last-child {
+      border: none; }
+
+.song-holder {
+  box-shadow: inset 0 -1px 12px 6px #e6e6e6;
+  display: none; }
+
+.song {
+  padding: 1em; }
+  .song div {
+    margin-bottom: 2em; }
+    .song div .line:first-child {
+      margin-top: -0.05em; }
+
+.bridge.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Bridge [x1] "; }
+
+.bridge.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Bridge [x2] "; }
+
+.bridge.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Bridge [x3] "; }
+
+.bridge.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Bridge [x4] "; }
+
+.bridge::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Bridge"; }
+
+.chorus.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Chorus [x1] "; }
+
+.chorus.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Chorus [x2] "; }
+
+.chorus.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Chorus [x3] "; }
+
+.chorus.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Chorus [x4] "; }
+
+.chorus::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Chorus"; }
+
+.line {
+  line-height: 1em; }
+  .line.repeat.once::before {
+    font-size: 0.75em;
+    font-style: italic;
+    color: darkgrey;
+    content: " [x1] "; }
+  .line.repeat.twice::before {
+    font-size: 0.75em;
+    font-style: italic;
+    color: darkgrey;
+    content: " [x2] "; }
+  .line.repeat.thrice::before {
+    font-size: 0.75em;
+    font-style: italic;
+    color: darkgrey;
+    content: " [x3] "; }
+  .line.repeat.fourtimes::before {
+    font-size: 0.75em;
+    font-style: italic;
+    color: darkgrey;
+    content: " [x4] "; }
+
+.verse.one.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 1 [x1] "; }
+
+.verse.one.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 1 [x2] "; }
+
+.verse.one.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 1 [x3] "; }
+
+.verse.one.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 1 [x4] "; }
+
+.verse.one::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 1"; }
+
+.verse.two.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 2 [x1] "; }
+
+.verse.two.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 2 [x2] "; }
+
+.verse.two.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 2 [x3] "; }
+
+.verse.two.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 2 [x4] "; }
+
+.verse.two::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 2"; }
+
+.verse.three.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 3 [x1] "; }
+
+.verse.three.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 3 [x2] "; }
+
+.verse.three.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 3 [x3] "; }
+
+.verse.three.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 3 [x4] "; }
+
+.verse.three::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 3"; }
+
+.verse.four.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 4 [x1] "; }
+
+.verse.four.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 4 [x2] "; }
+
+.verse.four.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 4 [x3] "; }
+
+.verse.four.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 4 [x4] "; }
+
+.verse.four::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 4"; }
+
+.verse.five.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 5 [x1] "; }
+
+.verse.five.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 5 [x2] "; }
+
+.verse.five.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 5 [x3] "; }
+
+.verse.five.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 5 [x4] "; }
+
+.verse.five::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 5"; }
+
+.verse.six.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 6 [x1] "; }
+
+.verse.six.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 6 [x2] "; }
+
+.verse.six.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 6 [x3] "; }
+
+.verse.six.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 6 [x4] "; }
+
+.verse.six::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 6"; }
+
+.verse.seven.repeat.once::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 7 [x1] "; }
+
+.verse.seven.repeat.twice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 7 [x2] "; }
+
+.verse.seven.repeat.thrice::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 7 [x3] "; }
+
+.verse.seven.repeat.fourtimes::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 7 [x4] "; }
+
+.verse.seven::before {
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgrey;
+  content: "Verse 7"; }
+
+.song-spinner {
+  margin: 0.1em auto 0;
+  width: 70px;
+  text-align: center;
+  display: none; }
+
+.song-spinner > div {
+  width: 9px;
+  height: 9px;
+  background-color: #333;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.song-spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.song-spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0); }
+  40% {
+    -webkit-transform: scale(1); } }
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0); }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1); } }
+
+.index-spinner {
+  height: 3em;
+  width: 3em;
+  margin: 3em auto 0 auto;
+  position: relative;
+  -webkit-animation: rotation 0.6s infinite linear;
+  -moz-animation: rotation 0.6s infinite linear;
+  -o-animation: rotation 0.6s infinite linear;
+  animation: rotation 0.6s infinite linear;
+  border-left: 6px solid #e6e6e6;
+  border-right: 6px solid #e6e6e6;
+  border-bottom: 6px solid #e6e6e6;
+  border-top: 6px solid #000;
+  border-radius: 100%; }
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(359deg); } }
+
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg); }
+  to {
+    -o-transform: rotate(359deg); } }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+/*# sourceMappingURL=main.css.map */

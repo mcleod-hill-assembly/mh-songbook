@@ -1,0 +1,30 @@
+$list_bottom_border_color: #ccc;
+$song_link_hover_color: #f6f6f6;
+$default_song_link_color: #000;
+
+#song-index {
+  ul {
+    padding-left:0;
+    padding-right:0;
+    list-style-type: none;
+    li {
+      margin-left:0.15em;
+      margin-right:0.15em;
+      border-bottom: 1px solid $list_bottom_border_color;
+      a {
+        width: 90%;
+        text-decoration: none;
+        color: $default_song_link_color;
+        padding-right: 0;
+        font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
+        transition: font-size 0.3s ease, background-color 0.3s ease;
+      }
+      &:hover {
+        background: $song_link_hover_color;
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+}
