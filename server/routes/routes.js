@@ -18,11 +18,13 @@ module.exports.anonymousRouteMiddleware = function(passport) {
 };
 
 module.exports.microserviceRouteMiddleware = function() {
-    const securedRest = new Router();
-    const restProxy = require("../route-handlers/anonymous/rest-proxy");
+  const rest = new Router();
+  const action = function(module, method){
+    return require('route-handlers/anonymous/rest/' + module)[method];
+  };
 
-    securedRest.get("/rest/:action/:id", restProxy.resolveRequest);
+  rest.get("/rest/songs/", action('songs','getSongs'));
 
-    return securedRest.middleware();
+  return rest.middleware();
 };
 

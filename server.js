@@ -2,6 +2,7 @@
 
 // Enable requiring modules relative to server directory
 require('app-module-path').addPath(__dirname + '/server');
+require('app-module-path').addPath(__dirname + '/');
 
 const getIdentity = function(){
     let os = require('os');
