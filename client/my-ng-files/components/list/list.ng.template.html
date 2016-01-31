@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row" ng-repeat="song in songs | filter:{title:query} | orderBy:'title'  ">
+        <div class="col-xs-0 col-sm-1 col-md-2 col-lg-3"></div>
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6">
+            <listing song="song" index="$index"></listing>
+        </div>
+        <div class="col-xs-0 col-sm-1 col-md-2 col-lg-3"></div>
+    </div>
+</div>
+
+
