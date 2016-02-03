@@ -1,8 +1,6 @@
 <div class="list-group-item">
     <button class="btn btn-link" data-toggle="collapse" data-target="#listingContent{{index}}">{{song.title}}</button>
     <div id="listingContent{{index}}" class="collapse">
-        <div ng-repeat="verse in song.verses">
-            <div ng-repeat="line in verse">{{line}}</div>
-        </div>
+        {{song.verses | json}}
     </div>
 </div>
