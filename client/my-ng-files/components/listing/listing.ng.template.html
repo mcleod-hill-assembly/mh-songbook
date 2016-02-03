@@ -1,6 +1,6 @@
 <div class="list-group-item">
     <button class="btn btn-link" data-toggle="collapse" data-target="#listingContent{{index}}">{{song.title}}</button>
     <div id="listingContent{{index}}" class="collapse">
-        {{song.verses | json}}
+        <div class="well well-lg">{{song.verses | json}}</div>
     </div>
 </div>
